@@ -1,0 +1,95 @@
+ID,Sprint,Task,Subtasks,Owner,Priority,Estimate,Status,Dependencies
+0.1,Sprint 0,Create All Sprint Documents,"10 subtasks: Create Sprint 1-10 documents",CE-Hub Orchestrator,CRITICAL,4h,✅ COMPLETE,None
+0.2,Sprint 0,Setup Project Tracking System,"6 subtasks: Choose tool, create workspace, setup milestones, create templates, define workflow, invite collaborators",Michael Durante,HIGH,2h,⏳ IN PROGRESS,None
+0.3,Sprint 0,Define Acceptance Criteria Template,"4 subtasks: Create task template, sprint template, feature template, validation process",CE-Hub Orchestrator,HIGH,1h,⏳ PENDING,None
+0.4,Sprint 0,Create Dependency Map,"5 subtasks: Map sprint dependencies, map critical path, identify parallel opportunities, document external dependencies, create visual graph",CE-Hub Orchestrator,HIGH,2h,⏳ PENDING,Task 0.1
+0.5,Sprint 0,Risk Assessment & Mitigation,"6 subtasks: Identify risks, assess probability, assess impact, define mitigations, assign owners, create monitoring",CE-Hub Orchestrator + Michael,HIGH,3h,⏳ PENDING,Task 0.1
+0.6,Sprint 0,Define Time Estimation Standards,"4 subtasks: Define task categories, document standards, create buffer policy, define re-estimation",Michael Durante,MEDIUM,1h,⏳ PENDING,None
+0.7,Sprint 0,Create Development Workflow,"6 subtasks: Define git workflow, code review, testing, deployment, rollback, document",Michael Durante,HIGH,2h,⏳ PENDING,None
+0.8,Sprint 0,Validate Development Environment,"5 subtasks: Validate frontend, backend, Archon, document issues, fix issues",Michael Durante,HIGH,1h,⏳ PENDING,None
+0.9,Sprint 0,Create Communication Protocol,"5 subtasks: Define channels, daily format, sprint boundaries, escalation path, document",CE-Hub Orchestrator + Michael,MEDIUM,1h,⏳ PENDING,None
+0.10,Sprint 0,Create Definition of Done,"4 subtasks: Create task DoD, sprint DoD, exceptions process, approve DoD",CE-Hub Orchestrator + Michael,HIGH,1h,⏳ PENDING,None
+1.1,Sprint 1,Fix Hardcoded Date Bug,"6 subtasks: Locate instances, implement dynamic selection, add validation, test dates, test weekends, test holidays",CE-Hub Orchestrator,CRITICAL,2h,⏳ PENDING,None
+1.2,Sprint 1,Fix Execution Flow Disconnect,"6 subtasks: Locate function, add execution call, handle response, track ID, implement polling, test flow",CE-Hub Orchestrator,CRITICAL,4h,⏳ PENDING,None
+1.3,Sprint 1,Implement Real-Time Progress Tracking,"6 subtasks: Implement polling, state management, UI updates, completion handling, error handling, test",CE-Hub Orchestrator,HIGH,4h,⏳ PENDING,Task 1.2
+1.4,Sprint 1,Create Unified API Client,"7 subtasks: Create class, implement methods, add types, error handling, retry logic",CE-Hub Orchestrator,MEDIUM,2h,⏳ PENDING,None
+1.5,Sprint 1,Start Archon MCP Server,"7 subtasks: Navigate to Archon, verify installation, check dependencies, start server, verify health, test query, document",Michael Durante,HIGH,3h,⏳ PENDING,None
+1.6,Sprint 1,Validate End-to-End Workflow,"7 subtasks: Test 4 cases, document issues, fix issues, re-test",Michael + CE-Hub,HIGH,3h,⏳ PENDING,Tasks 1.1-1.5
+1.7,Sprint 1,Document Current Issues,"6 subtasks: Document fixes, known issues, workarounds, technical debt, observations, recommendations",CE-Hub Orchestrator,MEDIUM,2h,⏳ PENDING,Tasks 1.1-1.6
+2.1,Sprint 2,Create Archon MCP Client Wrapper,"10 subtasks: Create client, implement methods, add types, error handling, retry logic, test",CE-Hub Orchestrator,HIGH,4h,⏳ PENDING,Sprint 1
+2.2,Sprint 2,Ingest V31 Gold Standard,"7 subtasks: Read file, parse sections, extract concepts, create metadata, ingest, verify, test search",Michael Durante,CRITICAL,3h,⏳ PENDING,Task 2.1
+2.3,Sprint 2,Ingest Lingua Trading Framework,"8 subtasks: Read file, parse sections, extract setups, extract indicators, create metadata, ingest, verify, test search",Michael Durante,CRITICAL,4h,⏳ PENDING,Task 2.1
+2.4,Sprint 2,Ingest Systematized Strategies,"9 subtasks: Locate files, parse code, extract parameters, extract logic, detect timeframe, check V31, ingest, verify, test",Michael Durante,HIGH,4h,⏳ PENDING,Task 2.1
+2.5,Sprint 2,Ingest A+ Examples,"6 subtasks: Gather examples, extract parameters, extract descriptions, ingest, tag, test search",Michael Durante,MEDIUM,3h,⏳ PENDING,Task 2.1
+2.6,Sprint 2,Implement RAG Search Validation,"8 subtasks: Create suite, V31 tests, Lingua tests, strategy tests, multi-domain tests, relevance validation, run tests, document",CE-Hub Orchestrator,HIGH,3h,⏳ PENDING,Tasks 2.2-2.4
+2.7,Sprint 2,Create Archon-First Workflow Template,"7 subtasks: Create workflow, sync step, RAG steps, task tracking, ingestion, document, create examples",CE-Hub Orchestrator,MEDIUM,2h,⏳ PENDING,Task 2.1
+2.8,Sprint 2,Performance Test Archon,"7 subtasks: Create suite, single query tests, concurrent tests, large dataset tests, document metrics, identify bottlenecks, optimize",Michael Durante,MEDIUM,2h,⏳ PENDING,Tasks 2.2-2.4
+3.1,Sprint 3,Install CopilotKit Dependencies,"4 subtasks: Update package.json, run npm install, verify no conflicts, document versions",CE-Hub Orchestrator,CRITICAL,2h,⏳ PENDING,Sprint 2
+3.2,Sprint 3,Create CopilotKit Provider,"5 subtasks: Add provider, add CSS, configure URL, test render, verify no layout changes",CE-Hub Orchestrator,CRITICAL,2h,⏳ PENDING,Task 3.1
+3.3,Sprint 3,Create CopilotKit API Route,"4 subtasks: Create route, configure runtime, test endpoint, validate streaming",CE-Hub Orchestrator,CRITICAL,2h,⏳ PENDING,Task 3.1
+3.4,Sprint 3,Create RenataV2CopilotKit Sidebar,"11 subtasks: Create structure, open/close state, chat hook, contexts, actions, styling, test opens, test closes, test overlay",CE-Hub Orchestrator,HIGH,8h,⏳ PENDING,Tasks 3.1-3.3
+3.5,Sprint 3,Create Open Renata Button,"6 subtasks: Create button, style floating, add pulse animation, test visibility, test click, ensure no overlap",CE-Hub Orchestrator,HIGH,2h,⏳ PENDING,Task 3.4
+3.6,Sprint 3,Integrate Sidebar into /scan Page,"6 subtasks: Import, add button, position, test existing features, test Renata, test chart",CE-Hub Orchestrator,HIGH,2h,⏳ PENDING,Tasks 3.4-3.5
+3.7,Sprint 3,Integrate Sidebar into /backtest Page,"6 subtasks: Import, add button, position, test existing features, test Renata, test chart",CE-Hub Orchestrator,HIGH,2h,⏳ PENDING,Tasks 3.4-3.5
+3.8,Sprint 3,Integrate Sidebar into /projects Page,"5 subtasks: Import, add button, test existing features, test Renata, test UI",CE-Hub Orchestrator,MEDIUM,2h,⏳ PENDING,Tasks 3.4-3.5
+3.9,Sprint 3,Integrate Sidebar into /exec Page,"5 subtasks: Import, add button, test existing features, test Renata, test UI",CE-Hub Orchestrator,MEDIUM,2h,⏳ PENDING,Tasks 3.4-3.5
+3.10,Sprint 3,Comprehensive UI Testing,"10 subtasks: Test all pages features, test Renata button, test sidebar, take screenshots, document differences",Michael + CE-Hub,HIGH,4h,⏳ PENDING,Tasks 3.6-3.9
+3.11,Sprint 3,Implement Agent Action Handlers,"9 subtasks: Create service, implement 4 actions, error handling, types, test, document temporary",CE-Hub Orchestrator,HIGH,6h,⏳ PENDING,Task 3.4
+3.12,Sprint 3,Load Archon Knowledge into Sidebar,"6 subtasks: Fetch V31, fetch Lingua, make available, test V31 access, test Lingua access, handle errors",CE-Hub Orchestrator,HIGH,4h,⏳ PENDING,Sprint 2, Task 3.4
+3.13,Sprint 3,Test CopilotKit Chat Functionality,"8 subtasks: Test 5 cases, document results, fix issues, re-test",Michael + CE-Hub,HIGH,3h,⏳ PENDING,Tasks 3.1-3.12
+4.1,Sprint 4,Create PlannerAgent Service,"8 subtasks: Create service, implement workflow, add types, error handling, test, document",CE-Hub Orchestrator,HIGH,8h,⏳ PENDING,Sprint 3
+4.2,Sprint 4,Implement A+ Example Analysis,"6 subtasks: Create analyzer, extract chart breakdown, extract parameters, extract pattern, validate, test",CE-Hub Orchestrator,HIGH,6h,⏳ PENDING,Task 4.1
+4.3,Sprint 4,Implement Parameter Extraction,"5 subtasks: Create extractor, NLP processing, parameter mapping, validation, test",CE-Hub Orchestrator,HIGH,5h,⏳ PENDING,Task 4.1
+4.4,Sprint 4,Implement Mold Generation,"5 subtasks: Create generator, parameterize scanner, validate V31, test, document",CE-Hub Orchestrator,HIGH,5h,⏳ PENDING,Task 4.1
+4.5,Sprint 4,Implement Plan Creation,"6 subtasks: Create planner, define phases, generate tasks, validate, test, document",CE-Hub Orchestrator,HIGH,6h,⏳ PENDING,Task 4.1
+4.6,Sprint 4,Create Human Approval Workflow,"5 subtasks: Create UI, approve action, modify action, reject action, test",CE-Hub Orchestrator,MEDIUM,5h,⏳ PENDING,Task 4.1
+4.7,Sprint 4,Integrate Archon Context,"4 subtasks: Query similar strategies, retrieve patterns, integrate into planner, test",CE-Hub Orchestrator,MEDIUM,4h,⏳ PENDING,Tasks 4.1, Sprint 2
+4.8,Sprint 4,Testing & Validation,"3 subtasks: Test with A+ examples, validate workflow, document results",Michael + CE-Hub,HIGH,3h,⏳ PENDING,Tasks 4.1-4.7
+5.1,Sprint 5,Create ResearchAgent Service,"6 subtasks: Create service, implement search, add types, error handling, test, document",CE-Hub Orchestrator,HIGH,6h,⏳ PENDING,Sprint 4
+5.2,Sprint 5,Implement Archon RAG Integration,"8 subtasks: Create RAG client, query V31, query Lingua, query strategies, aggregate results, rank, validate, test",CE-Hub Orchestrator,HIGH,8h,⏳ PENDING,Tasks 5.1, Sprint 2
+5.3,Sprint 5,Implement Similar Strategy Search,"5 subtasks: Create searcher, similarity algorithm, filter strategies, rank results, test",CE-Hub Orchestrator,HIGH,5h,⏳ PENDING,Task 5.1
+5.4,Sprint 5,Implement Pattern Matching,"5 subtasks: Create matcher, pattern extraction, comparison logic, scoring, test",CE-Hub Orchestrator,HIGH,5h,⏳ PENDING,Task 5.1
+5.5,Sprint 5,Implement Market Regime Analysis,"5 subtasks: Create analyzer, regime detection, market data integration, analysis, test",CE-Hub Orchestrator,MEDIUM,5h,⏳ PENDING,Task 5.1
+5.6,Sprint 5,Implement Parameter Suggestions,"5 subtasks: Create suggester, historical analysis, parameter optimization, validation, test",CE-Hub Orchestrator,MEDIUM,5h,⏳ PENDING,Task 5.1
+5.7,Sprint 5,Implement Performance Tracking,"3 subtasks: Create tracker, metrics collection, reporting",CE-Hub Orchestrator,MEDIUM,3h,⏳ PENDING,Task 5.1
+5.8,Sprint 5,Testing & Validation,"2 subtasks: Validate research accuracy, document results",Michael + CE-Hub,HIGH,2h,⏳ PENDING,Tasks 5.1-5.7
+6.1,Sprint 6,Create BuilderAgent Service,"8 subtasks: Create service, implement generation, add types, error handling, test, document",CE-Hub Orchestrator,HIGH,8h,⏳ PENDING,Sprint 5
+6.2,Sprint 6,Implement V31 Code from Ideas,"8 subtasks: Create generator, NLP processing, V31 template, code generation, validation, testing, refinement, document",CE-Hub Orchestrator,CRITICAL,8h,⏳ PENDING,Tasks 6.1, Sprint 2
+6.3,Sprint 6,Implement Non-V31 to V31 Transformation,"8 subtasks: Create transformer, AST parser, V31 mapper, code transformation, validation, testing, refinement, document",CE-Hub Orchestrator,CRITICAL,8h,⏳ PENDING,Task 6.1
+6.4,Sprint 6,Implement A+ Mold to Scanner,"7 subtasks: Create converter, mold parser, parameter substitution, code generation, validation, test, document",CE-Hub Orchestrator,HIGH,7h,⏳ PENDING,Tasks 6.1, Sprint 4
+6.5,Sprint 6,Expand Template Library,"6 subtasks: Create templates, V31 patterns, parameter system, validation, organization, test",CE-Hub Orchestrator,MEDIUM,6h,⏳ PENDING,Task 6.1
+6.6,Sprint 6,Create V31 Validation System,"5 subtasks: Create validator, rule engine, linting, compliance check, test",CE-Hub Orchestrator,HIGH,5h,⏳ PENDING,Tasks 6.1, V31 spec
+6.7,Sprint 6,Implement Code Quality Checks,"4 subtasks: Create checker, quality rules, analysis, reporting",CE-Hub Orchestrator,MEDIUM,4h,⏳ PENDING,Task 6.1
+6.8,Sprint 6,Testing & Validation,"5 subtasks: Test code generation, test transformations, validate V31, quality check, document",Michael + CE-Hub,HIGH,5h,⏳ PENDING,Tasks 6.1-6.7
+7.1,Sprint 7,Create ExecutorAgent Service,"5 subtasks: Create service, implement execution, add types, error handling, test",CE-Hub Orchestrator,HIGH,5h,⏳ PENDING,Sprint 6
+7.2,Sprint 7,Integrate FastAPI Backend,"6 subtasks: Create client, API integration, execution handling, response processing, error handling, test",CE-Hub Orchestrator,CRITICAL,6h,⏳ PENDING,Tasks 7.1, Sprint 1
+7.3,Sprint 7,Implement Real-Time Progress Tracking,"6 subtasks: Create WebSocket, progress events, state management, UI updates, completion handling, test",CE-Hub Orchestrator,HIGH,6h,⏳ PENDING,Task 7.1
+7.4,Sprint 7,Implement Result Collection,"4 subtasks: Create collector, result parsing, formatting, storage",CE-Hub Orchestrator,MEDIUM,4h,⏳ PENDING,Task 7.1
+7.5,Sprint 7,Implement Error Handling,"4 subtasks: Create error handler, error types, recovery logic, logging",CE-Hub Orchestrator,HIGH,4h,⏳ PENDING,Task 7.1
+7.6,Sprint 7,Implement Execution Queue Management,"4 subtasks: Create queue, queue processor, priority handling, monitoring",CE-Hub Orchestrator,MEDIUM,4h,⏳ PENDING,Task 7.1
+7.7,Sprint 7,Implement Performance Monitoring,"2 subtasks: Create monitor, metrics collection",CE-Hub Orchestrator,MEDIUM,2h,⏳ PENDING,Task 7.1
+7.8,Sprint 7,Testing & Validation,"2 subtasks: Test execution flows, validate performance",Michael + CE-Hub,HIGH,2h,⏳ PENDING,Tasks 7.1-7.7
+8.1,Sprint 8,Create AnalystAgent Service,"6 subtasks: Create service, implement analysis, add types, error handling, test, document",CE-Hub Orchestrator,HIGH,6h,⏳ PENDING,Sprint 7
+8.2,Sprint 8,Implement Backtest Result Analysis,"6 subtasks: Create analyzer, metrics calculation, performance analysis, comparison, reporting, test",CE-Hub Orchestrator,HIGH,6h,⏳ PENDING,Task 8.1
+8.3,Sprint 8,Implement IS/OOS Validation,"6 subtasks: Create validator, data splitting, IS testing, OOS testing, comparison, reporting",CE-Hub Orchestrator,HIGH,6h,⏳ PENDING,Task 8.1
+8.4,Sprint 8,Implement Monte Carlo Simulation,"5 subtasks: Create simulator, randomization, multiple runs, aggregation, reporting",CE-Hub Orchestrator,MEDIUM,5h,⏳ PENDING,Task 8.1
+8.5,Sprint 8,Implement Regime Analysis,"5 subtasks: Create analyzer, regime detection, performance by regime, comparison, insights",CE-Hub Orchestrator,MEDIUM,5h,⏳ PENDING,Task 8.1
+8.6,Sprint 8,Implement Parameter Optimization,"5 subtasks: Create optimizer, optimization algorithm, search space, evaluation, results",CE-Hub Orchestrator,HIGH,5h,⏳ PENDING,Task 8.1
+8.7,Sprint 8,Implement Performance Reporting,"3 subtasks: Create reporter, report generation, visualization",CE-Hub Orchestrator,MEDIUM,3h,⏳ PENDING,Task 8.1
+8.8,Sprint 8,Testing & Validation,"1 subtask: Validate analysis accuracy",Michael + CE-Hub,HIGH,1h,⏳ PENDING,Tasks 8.1-8.7
+9.1,Sprint 9,Complete Workflow Testing,"8 subtasks: Test A+ workflow, test transformation, test idea workflow, test handoffs, test coordination, test edge cases, document, fix",Michael + CE-Hub,CRITICAL,8h,⏳ PENDING,Sprint 8
+9.2,Sprint 9,A+ Example to Launch Testing,"8 subtasks: Test with A+ example, planning, research, build, execute, analyze, validate, document",Michael + CE-Hub,HIGH,8h,⏳ PENDING,Task 9.1
+9.3,Sprint 9,Code Transform to Launch Testing,"7 subtasks: Test transformation, planning, build, execute, analyze, validate, document",Michael + CE-Hub,HIGH,7h,⏳ PENDING,Task 9.1
+9.4,Sprint 9,Idea to Launch Testing,"7 subtasks: Test idea input, planning, research, build, execute, analyze, validate",Michael + CE-Hub,HIGH,7h,⏳ PENDING,Task 9.1
+9.5,Sprint 9,Agent Coordination Testing,"6 subtasks: Test handoffs, context transfer, error handling, recovery, performance, document",Michael + CE-Hub,HIGH,6h,⏳ PENDING,Task 9.1
+9.6,Sprint 9,Performance Testing,"4 subtasks: Load testing, stress testing, performance profiling, optimization",Michael + CE-Hub,MEDIUM,4h,⏳ PENDING,Task 9.1
+9.7,Sprint 9,Security Validation,"2 subtasks: Security audit, penetration testing",Michael + CE-Hub,MEDIUM,2h,⏳ PENDING,Task 9.1
+9.8,Sprint 9,User Acceptance Testing,"2 subtasks: Final validation, sign-off",Michael Durante,CRITICAL,2h,⏳ PENDING,Tasks 9.1-9.7
+10.1,Sprint 10,Production Deployment,"8 subtasks: Prepare deployment, deploy frontend, deploy backend, configure Archon, smoke test, monitor, document, handoff",CE-Hub Orchestrator,CRITICAL,8h,⏳ PENDING,Sprint 9
+10.2,Sprint 10,Complete Documentation,"8 subtasks: Write user guide, write developer guide, API docs, deployment guide, troubleshooting guide, quick start, tutorials, review",Michael + CE-Hub,HIGH,8h,⏳ PENDING,Task 10.1
+10.3,Sprint 10,Performance Optimization,"6 subtasks: Profile code, identify bottlenecks, optimize queries, optimize rendering, optimize API, validate",CE-Hub Orchestrator,MEDIUM,6h,⏳ PENDING,Task 10.1
+10.4,Sprint 10,Setup Monitoring and Alerting,"5 subtasks: Setup metrics, setup dashboards, configure alerts, test alerts, document",CE-Hub Orchestrator,HIGH,5h,⏳ PENDING,Task 10.1
+10.5,Sprint 10,Implement Backup and Recovery,"4 subtasks: Setup backups, test recovery, document procedures, validate",CE-Hub Orchestrator,MEDIUM,4h,⏳ PENDING,Task 10.1
+10.6,Sprint 10,Create Launch Playbook,"3 subtasks: Create checklist, define procedures, test",Michael Durante,HIGH,3h,⏳ PENDING,Task 10.1
+10.7,Sprint 10,Create Training Materials,"2 subtasks: Create user training, create admin training",Michael Durante,MEDIUM,2h,⏳ PENDING,Task 10.1
+10.8,Sprint 10,Post-Launch Support,"2 subtasks: Monitor support, create retrospective",Michael + CE-Hub,HIGH,2h,⏳ PENDING,Task 10.1
