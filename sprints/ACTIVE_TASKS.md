@@ -150,12 +150,12 @@ The original 10-sprint plan (Sprints 0-10) will be restructured to align with to
   - **Output**: Complete capability list with descriptions ✅
   - **Document**: sprints/CAPABILITY_EXTRACTION_COMPLETE.md
 
-- [ ] ⏸️ **Task 1.2**: Group capabilities into logical tools
-  - Target: 10-15 tools (aim for 15 max)
-  - Criteria: Each tool does ONE thing well
-  - **Output**: Tool mapping document (TOOL_EXTRACTION_PLAN.md)
+- [x] ✅ **Task 1.2**: Group capabilities into logical tools ✅ COMPLETE
+  - Target: 10-15 tools (aim for 15 max) ✅
+  - Result: 13 tools designed ✅
+  - **Output**: Tool mapping document (TOOL_DESIGN_COMPLETE.md) ✅
 
-- [ ] ⏸️ **Task 1.3**: Define tool interfaces
+- [ ] ⏳ **Task 1.3**: Define tool interfaces
   - Input parameters for each tool
   - Return value specifications
   - Error handling approach
