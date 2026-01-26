@@ -9,9 +9,10 @@
 
 ## 🚀 Quick Start - Where to Look
 
-### **Want to see tasks?** → `agents/renata/RENATA_V2_2026/ACTIVE_TASKS.md`
-### **Want to see the plan?** → `agents/renata/RENATA_V2_2026/SPRINT_00_PRE-FLIGHT.md`
-### **Want to see what we just did?** → `REORGANIZATION_COMPLETE.md`
+### **⭐ YOUR BUILD MAP & PLAN** → `sprints/` folder (read this first!)
+### **Want current tasks?** → `sprints/ACTIVE_TASKS.md`
+### **Want complete roadmap?** → `sprints/MASTER_TASK_LIST.md`
+### **Want all sprint plans?** → `sprints/README.md` (complete guide)
 ### **Want to start working?** → `docs/guides/SPRINT_WORKFLOW.md`
 
 ---
@@ -23,8 +24,20 @@ edge-dev-main-v2/
 │
 ├── 📋 ROOT LEVEL (Quick Access)
 │   ├── README.md                           # Main project overview
-│   ├── REORGANIZATION_COMPLETE.md          # ⭐ What we just did
-│   └── README_INDEX.md                     # ⭐ This file - complete overview
+│   ├── REORGANIZATION_COMPLETE.md          # What we just did
+│   ├── README_INDEX.md                     # This file - complete overview
+│   │
+├── 🎯 sprints/                             # ⭐⭐⭐ YOUR BUILD MAP & PLAN
+│   ├── README.md                           # Complete guide to sprints folder
+│   ├── ACTIVE_TASKS.md                     # ⭐ Current task tracker
+│   ├── MASTER_TASK_LIST.md                 # ⭐ Complete roadmap (257 tasks)
+│   ├── SPRINT_00_PRE-FLIGHT.md             # Sprint 0 (COMPLETE)
+│   ├── SPRINT_01_FOUNDATION.md             # Sprint 1 (NEXT)
+│   ├── SPRINT_02 through SPRINT_10         # All sprint plans
+│   ├── DEPENDENCY_MAP.md                   # Task dependencies
+│   ├── RISK_ASSESSMENT.md                  # 47 identified risks
+│   ├── TOOL_EXTRACTION_PLAN.md             # Architecture refactor
+│   └── SPRINT_0_RETROSPECTIVE.md           # What went well
 │
 ├── 📚 docs/                                # ALL DOCUMENTATION
 │   ├── architecture/
@@ -77,35 +90,13 @@ edge-dev-main-v2/
 │
 ├── 🤖 agents/                              # AI AGENT SYSTEM
 │   └── renata/
-│       └── RENATA_V2_2026/                       # ⭐ ALL TASKS & PLANS
-│           │
-│           ├── 📋 PLANNING DOCUMENTS
-│           │   ├── ACTIVE_TASKS.md                    # ⭐⭐⭐ Current task tracker
-│           │   ├── SPRINT_00_PRE-FLIGHT.md            # ⭐ Sprint 0 details
-│           │   ├── SPRINT_01_FOUNDATION.md            # Sprint 1 plan
-│           │   ├── SPRINT_02_ARCHON.md                # Sprint 2 plan
-│           │   ├── MASTER_TASK_LIST.md                # All 257 tasks
-│           │   └── DEPENDENCY_MAP.md                  # Task dependencies
-│           │
-│           ├── 📊 SPRINT DOCUMENTS
-│           │   ├── SPRINT_0_RETROSPECTIVE.md          # Sprint 0 retrospective
-│           │   ├── CAPABILITIES_UPDATE_SUMMARY.md     # Capabilities added
-│           │   ├── COLE_MEDINA_ARCHITECTURE_REVIEW.md # Architecture decision
-│           │   ├── FINAL_ARCHITECTURE_DECISION.md     # Refactor decision
-│           │   └── TOOL_EXTRACTION_PLAN.md            # Tool extraction plan
-│           │
-│           ├── 📖 REFERENCE DOCUMENTS
-│           │   ├── RENATA_CAPABILITIES_INFRASTRUCTURE.md # Agent capabilities
-│           │   ├── DEFINITION_OF_DONE.md                  # Completion criteria
-│           │   ├── COMMUNICATION_PROTOCOL.md             # Team communication
-│           │   ├── DEVELOPMENT_WORKFLOW.md               # Development process
-│           │   ├── TIME_ESTIMATION_STANDARDS.md          # Estimating guidelines
-│           │   └── RISK_ASSESSMENT.md                    # 47 risks identified
-│           │
-│           └── 📝 TEMPLATES
-│               ├── ACCEPTANCE_CRITERIA_TASK.md
-│               ├── ACCEPTANCE_CRITERIA_SPRINT.md
-│               └── VALIDATION_PROCESS.md
+│       └── RENATA_V2_2026/                       # RENATA agent files
+│           ├── RENATA_CAPABILITIES_INFRASTRUCTURE.md # Agent capabilities
+│           ├── DEFINITION_OF_DONE.md                  # Completion criteria
+│           ├── COMMUNICATION_PROTOCOL.md             # Team communication
+│           ├── DEVELOPMENT_WORKFLOW.md               # Development process
+│           ├── TIME_ESTIMATION_STANDARDS.md          # Estimating guidelines
+│           └── templates/                             # Document templates
 │
 ├── 🔧 scanners/                             # SCANNER SYSTEM
 │   ├── templates/                                # Scanner templates
