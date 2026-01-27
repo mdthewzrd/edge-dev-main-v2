@@ -34,6 +34,7 @@ from .parameter_optimizer import parameter_optimizer
 from .sensitivity_analyzer import sensitivity_analyzer
 from .backtest_generator import backtest_generator
 from .backtest_analyzer import backtest_analyzer
+from .build_plan_generator import build_plan_generator
 
 __all__ = [
     "ToolStatus",
@@ -55,4 +56,6 @@ __all__ = [
     # Backtest Tools
     "backtest_generator",
     "backtest_analyzer",
+    # Planning Tools
+    "build_plan_generator",
 ]
