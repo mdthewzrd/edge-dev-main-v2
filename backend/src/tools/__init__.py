@@ -32,6 +32,8 @@ from .a_plus_analyzer import a_plus_analyzer
 from .quick_backtester import quick_backtester
 from .parameter_optimizer import parameter_optimizer
 from .sensitivity_analyzer import sensitivity_analyzer
+from .backtest_generator import backtest_generator
+from .backtest_analyzer import backtest_analyzer
 
 __all__ = [
     "ToolStatus",
@@ -50,4 +52,7 @@ __all__ = [
     # Optimization Tools
     "parameter_optimizer",
     "sensitivity_analyzer",
+    # Backtest Tools
+    "backtest_generator",
+    "backtest_analyzer",
 ]
