@@ -28,6 +28,8 @@ from .scanner_executor import scanner_executor
 from .indicator_calculator import indicator_calculator
 from .market_structure_analyzer import market_structure_analyzer
 from .daily_context_detector import daily_context_detector
+from .a_plus_analyzer import a_plus_analyzer
+from .quick_backtester import quick_backtester
 
 __all__ = [
     "ToolStatus",
@@ -40,4 +42,7 @@ __all__ = [
     "indicator_calculator",
     "market_structure_analyzer",
     "daily_context_detector",
+    # Validation Tools
+    "a_plus_analyzer",
+    "quick_backtester",
 ]
