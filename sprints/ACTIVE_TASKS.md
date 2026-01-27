@@ -172,10 +172,10 @@ The original 10-sprint plan (Sprints 0-10) will be restructured to align with to
   - `v31_validator` - Validate V31 compliance (80 lines) ✅ IMPLEMENTED
   - `scanner_executor` - Run scanners live (120 lines) ✅ IMPLEMENTED
 
-- [ ] ⏸️ **Task 2.2**: Market Analysis Tools (3 tools)
-  - `indicator_calculator_tool()` - Calculate user's indicators (100 lines)
-  - `market_structure_tool()` - Detect pivots, trends, levels (120 lines)
-  - `daily_context_tool()` - Detect molds (D2, MDR, FBO, etc.) (80 lines)
+- [x] ✅ **Task 2.2**: Market Analysis Tools (3 tools) - **COMPLETE ✅**
+  - `indicator_calculator` - Calculate user's indicators (100 lines) ✅ IMPLEMENTED
+  - `market_structure_analyzer` - Detect pivots, trends, levels (120 lines) ✅ IMPLEMENTED
+  - `daily_context_detector` - Detect molds (D2, MDR, FBO, etc.) (80 lines) ✅ IMPLEMENTED
 
 - [ ] ⏸️ **Task 2.3**: Validation Tools (2 tools)
   - `a_analyzer_tool()` - Validate on A+ examples (100 lines)
