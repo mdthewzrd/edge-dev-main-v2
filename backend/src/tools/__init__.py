@@ -30,6 +30,8 @@ from .market_structure_analyzer import market_structure_analyzer
 from .daily_context_detector import daily_context_detector
 from .a_plus_analyzer import a_plus_analyzer
 from .quick_backtester import quick_backtester
+from .parameter_optimizer import parameter_optimizer
+from .sensitivity_analyzer import sensitivity_analyzer
 
 __all__ = [
     "ToolStatus",
@@ -45,4 +47,7 @@ __all__ = [
     # Validation Tools
     "a_plus_analyzer",
     "quick_backtester",
+    # Optimization Tools
+    "parameter_optimizer",
+    "sensitivity_analyzer",
 ]
