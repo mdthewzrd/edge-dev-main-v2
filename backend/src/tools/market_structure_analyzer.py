@@ -59,7 +59,7 @@ def market_structure_analyzer(input_data: Dict[str, Any]) -> ToolResult:
 
         # Extract inputs
         ticker = input_data.get("ticker", "")
-        df = input_data.get("df")
+        df = input_data.get("df").copy()  # Work on a copy
         lookback_period = input_data.get("lookback_period", 50)
         pivot_method = input_data.get("pivot_method", "standard")
         trend_method = input_data.get("trend_method", "hh_hl")
@@ -67,6 +67,14 @@ def market_structure_analyzer(input_data: Dict[str, Any]) -> ToolResult:
         resistance_levels = input_data.get("resistance_levels", 3)
         min_swing_strength = input_data.get("min_swing_strength", 0.02)
         return_chart_data = input_data.get("return_chart_data", False)
+
+        # Ensure DataFrame has DatetimeIndex if 'date' column exists
+        if 'date' in df.columns and not isinstance(df.index, pd.DatetimeIndex):
+            df['date'] = pd.to_datetime(df['date'])
+            df = df.set_index('date')
+        elif not isinstance(df.index, pd.DatetimeIndex):
+            # If no date column, create DatetimeIndex from data
+            df.index = pd.date_range(start='2024-01-01', periods=len(df), freq='D')
 
         # Analyze trend
         trend_analysis = analyze_trend(df, trend_method, lookback_period)

@@ -158,115 +158,57 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    // ✅ ALWAYS CALL AI for non-code messages - NO FALLBACKS
-    console.log('🤖 Calling OpenRouter AI for general chat...');
+    // ✅ ALWAYS CALL RENATA V2 ORCHESTRATOR for non-code messages
+    console.log('🤖 Calling RENATA V2 Orchestrator for intelligent processing...');
 
     try {
-      const aiResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:5665'}/api/ai/chat`, {
+      const orchestratorResponse = await fetch('http://localhost:5666/api/renata/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           message: message,
-          conversationHistory: conversationHistory, // Include conversation history
-          personality: 'helpful',
-          parseJson: false,
-          model: 'qwen/qwen-2.5-coder-32b-instruct'
+          context: context || {}
         })
       });
 
-      if (!aiResponse.ok) {
-        console.error('❌ AI chat API error:', aiResponse.status);
-        throw new Error('AI service unavailable');
+      if (!orchestratorResponse.ok) {
+        console.error('❌ RENATA Orchestrator API error:', orchestratorResponse.status);
+        throw new Error('RENATA Orchestrator service unavailable');
       }
 
-      const aiData = await aiResponse.json();
+      const orchestratorData = await orchestratorResponse.json();
 
-      if (aiData.error) {
-        console.error('❌ AI returned error:', aiData.error);
-        throw new Error(aiData.message || 'AI service error');
+      if (!orchestratorData.success) {
+        console.error('❌ RENATA Orchestrator returned error:', orchestratorData.response);
+        throw new Error(orchestratorData.response || 'RENATA Orchestrator error');
       }
 
-      console.log('✅ AI response received:', aiData.message?.substring(0, 100));
+      console.log('✅ RENATA Orchestrator response received:', orchestratorData.response?.substring(0, 100));
+      console.log('🔧 Tools used:', orchestratorData.tools_used);
+      console.log('⏱️ Execution time:', orchestratorData.execution_time, 'seconds');
 
-      // 🧹 Clean up AI thinking/reasoning from response
-      let cleanedMessage = aiData.message;
-
-      // The qwen model outputs thinking first, then the actual response
-      // Pattern: [thinking text]\n\n[actual response]
-      // Strategy: Find the last meaningful paragraph after the blank line
-
-      const parts = cleanedMessage.split(/\n\n+/);
-
-      // Filter out paragraphs that are clearly thinking/reasoning
-      const thinkingIndicators = [
-        /^(Okay|Let me|I need to|I should|The user|Since|So|Maybe)/,
-        /(I need to|I should|I'll|I'm going to|Let me)/,
-        /(thinking|reasoning|analyze|consider)/i
-      ];
-
-      // Find paragraphs that don't start with thinking indicators
-      const responseParagraphs = parts.filter((p: string) => {
-        const trimmed = p.trim();
-        if (trimmed.length < 10) return false;
-
-        // Check if this paragraph starts with thinking indicators
-        for (const pattern of thinkingIndicators) {
-          if (pattern.test(trimmed.substring(0, 100))) {
-            return false;
-          }
-        }
-
-        return true;
-      });
-
-      // Use the last response paragraph as the actual response
-      if (responseParagraphs.length > 0) {
-        cleanedMessage = responseParagraphs[responseParagraphs.length - 1].trim();
-        console.log('🧹 Extracted clean response (last non-thinking paragraph)');
-      } else {
-        // Fallback: if all paragraphs look like thinking, use the last one
-        const lastParagraph = parts[parts.length - 1].trim();
-        if (lastParagraph.length > 10) {
-          cleanedMessage = lastParagraph;
-          console.log('🧹 Using last paragraph as fallback');
-        }
-      }
-
-      // Final cleanup: ensure it's not too long (max 300 chars for chat responses)
-      if (cleanedMessage.length > 300) {
-        // Try to find a natural sentence break
-        const sentenceEnds = cleanedMessage.match(/^[^.!?]+[.!?]/);
-        if (sentenceEnds) {
-          cleanedMessage = sentenceEnds[0].trim();
-        }
-      }
-
-      // If cleaning removed too much, use original but trim it
-      if (cleanedMessage.length < 10) {
-        console.log('⚠️ Cleaning too aggressive, using trimmed original');
-        cleanedMessage = aiData.message.trim().substring(0, 300);
-      }
-
-      console.log('🧹 Final cleaned message:', cleanedMessage.substring(0, 100));
-      console.log('🧹 Final message length:', cleanedMessage.length, 'chars');
+      // Build response from orchestrator data
+      const responseMessage = orchestratorData.response;
 
       return NextResponse.json({
         success: true,
-        message: cleanedMessage,
+        message: responseMessage,
         type: 'chat',
         timestamp: new Date().toISOString(),
-        ai_engine: 'Renata Multi-Agent (OpenRouter)',
-        model: aiData.model
+        ai_engine: 'RENATA V2 Orchestrator',
+        tools_used: orchestratorData.tools_used,
+        execution_time: orchestratorData.execution_time,
+        intent: orchestratorData.intent
       });
 
     } catch (error) {
-      console.error('❌ AI chat error:', error);
+      console.error('❌ RENATA Orchestrator error:', error);
 
       // Only return error response, NEVER a fallback
       return NextResponse.json({
         success: false,
-        error: 'AI_SERVICE_ERROR',
-        message: `I'm having trouble connecting to my AI brain right now: ${error instanceof Error ? error.message : 'Unknown error'}. Please try again.`,
+        error: 'ORCHESTRATOR_SERVICE_ERROR',
+        message: `I'm having trouble connecting to RENATA V2 Orchestrator: ${error instanceof Error ? error.message : 'Unknown error'}. Please try again.`,
         type: 'error',
         timestamp: new Date().toISOString()
       }, { status: 500 });

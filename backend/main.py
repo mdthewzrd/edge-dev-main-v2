@@ -645,6 +645,14 @@ try:
 except ImportError as e:
     print(f"⚠️ RENATA_V2 transformation endpoint not available: {e}")
 
+# Import and include RENATA V2 Orchestrator API
+try:
+    from api_routes import router as orchestrator_router
+    app.include_router(orchestrator_router)
+    print("✅ RENATA V2 Orchestrator API loaded successfully")
+except ImportError as e:
+    print(f"⚠️ RENATA V2 Orchestrator API not available: {e}")
+
 # Import RENATA_V2 transformer for direct use in scan execution
 RENATA_V2_TRANSFORMER_AVAILABLE = False
 try:
